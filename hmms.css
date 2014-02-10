@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  background: #fff;
+  text-align: center;
+}
+
+div {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+div p {
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.main {
+  width: 100%;
+  text-align: center; /* for IE5.5 IE5 */
+}
+
+.main div {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.large {
+  font-size: large;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.x-small {
+  font-size: x-small;
+}
+
+#box1 {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  width: 160px;
+  margin-left: -160px;
+}
+
+#box2 {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  width: 160px;
+  margin-left: 0px;
+}
+
+#box3 {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  width: 160px;
+  margin-left: -160px;
+}
+
+#box4 {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  width: 160px;
+  margin-left: 0px;
+}
+
+#box5 {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  width: 160px;
+  margin-left: -160px;
+}
+
+#box6 {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  width: 160px;
+  margin-left: 0px;
+}
+
+#now {
+  position: absolute;
+  top:96%;
+}
+/*
+#boxContainer {
+  border: 1px solid #000000;
+}
+*/
