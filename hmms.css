@@ -54,7 +54,7 @@ div p {
 
 #box3 {
   position: absolute;
-  top: 33%;
+  top: 31%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -62,7 +62,7 @@ div p {
 
 #box4 {
   position: absolute;
-  top: 33%;
+  top: 31%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -70,7 +70,7 @@ div p {
 
 #box5 {
   position: absolute;
-  top: 66%;
+  top: 61%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -78,7 +78,7 @@ div p {
 
 #box6 {
   position: absolute;
-  top: 66%;
+  top: 61%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -87,6 +87,18 @@ div p {
 #now {
   position: absolute;
   top:96%;
+}
+
+#sli {
+  position: absolute;
+  top:90%;
+}
+
+#slider {
+  position: absolute;
+  margin-left: -100px;
+  width: 200px;
+  top:92%;
 }
 /*
 #boxContainer {

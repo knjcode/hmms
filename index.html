@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hmms</title>
 <link rel="stylesheet" href="hmms.css" />
-<script type="text/javascript" src="hmms.js"></script>
-<script type="text/javascript" src="japanese.holiday.js"></script>
+<script>
+var rangevalue = 0;
+</script>
 </head>
 <body onload="init();">
 <div class="main">
@@ -64,7 +65,10 @@
       <div id="type6" class="x-small"></div>
       <p id="dur6" class="large"></p>
     </div>
+    <input id="slider" type="range" min="0" max="180" value="0" step="1" onchange="rangevalue=value" /><div id="sli" class="smaller"></div>
     <div id="now" class="smaller"></div>
 </div>
+<script type="text/javascript" src="hmms.js"></script>
+<script type="text/javascript" src="japanese.holiday.js"></script>
 </body>
 </html>
