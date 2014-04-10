@@ -6,67 +6,73 @@
 <title>hmms</title>
 <link rel="stylesheet" href="hmms.css" />
 <script>
-var rangevalue = 0;
+var rangevalue = 60;
+function showvalue(val) {
+  rangevalue = val;
+  offset = val - 60;
+  document.getElementById("sli").innerHTML = "オフセット："+offset+"分";
+}
 </script>
 </head>
 <body onload="init();">
 <div class="main">
+    <div id="now" class="smaller"></div>
+    <div id="sli" class="smaller"></div>
     <div id="box1">
       <div id="route1" class="x-small"></div>
-      <div id="station1" class="large"></div>
-      <div id="desc1" class="smaller"></div>
+      <div id="station1" class="medium"></div>
+      <div id="desc1" class="small"></div>
       <div id="next1" class="smaller"></div>
       <div id="dir1" class="x-small"></div>
-      <div id="type1" class="x-small"></div>
+      <div id="type1" class="xx-small"></div>
       <p id="dur1" class="large"></p>
     </div>
     <div id="box2">
       <div id="route2" class="x-small"></div>
-      <div id="station2" class="large"></div>
-      <div id="desc2" class="smaller"></div>
+      <div id="station2" class="medium"></div>
+      <div id="desc2" class="small"></div>
       <div id="next2" class="smaller"></div>
       <div id="dir2" class="x-small"></div>
-      <div id="type2" class="x-small"></div>
+      <div id="type2" class="xx-small"></div>
       <p id="dur2" class="large"></p>
     </div>
-    <div id="box3">
+   <div id="box3">
       <div id="route3" class="x-small"></div>
-      <div id="station3" class="large"></div>
-      <div id="desc3" class="smaller"></div>
+      <div id="station3" class="medium"></div>
+      <div id="desc3" class="small"></div>
       <div id="next3" class="smaller"></div>
       <div id="dir3" class="x-small"></div>
-      <div id="type3" class="x-small"></div>
+      <div id="type3" class="xx-small"></div>
       <p id="dur3" class="large"></p>
     </div>
     <div id="box4">
       <div id="route4" class="x-small"></div>
-      <div id="station4" class="large"></div>
-      <div id="desc4" class="smaller"></div>
+      <div id="station4" class="medium"></div>
+      <div id="desc4" class="small"></div>
       <div id="next4" class="smaller"></div>
       <div id="dir4" class="x-small"></div>
-      <div id="type4" class="x-small"></div>
+      <div id="type4" class="xx-small"></div>
       <p id="dur4" class="large"></p>
     </div>
     <div id="box5">
       <div id="route5" class="x-small"></div>
-      <div id="station5" class="large"></div>
-      <div id="desc5" class="smaller"></div>
+      <div id="station5" class="medium"></div>
+      <div id="desc5" class="small"></div>
       <div id="next5" class="smaller"></div>
       <div id="dir5" class="x-small"></div>
-      <div id="type5" class="x-small"></div>
+      <div id="type5" class="xx-small"></div>
       <p id="dur5" class="large"></p>
     </div>
     <div id="box6">
       <div id="route6" class="x-small"></div>
-      <div id="station6" class="large"></div>
-      <div id="desc6" class="smaller"></div>
+      <div id="station6" class="medium"></div>
+      <div id="desc6" class="small"></div>
       <div id="next6" class="smaller"></div>
       <div id="dir6" class="x-small"></div>
-      <div id="type6" class="x-small"></div>
+      <div id="type6" class="xx-small"></div>
       <p id="dur6" class="large"></p>
     </div>
-    <input id="slider" type="range" min="0" max="180" value="0" step="1" onchange="rangevalue=value" /><div id="sli" class="smaller"></div>
-    <div id="now" class="smaller"></div>
+    <input id="slider" type="range" min="0" max="120" value="60" step="1" onchange="showvalue(value)" />
 </div>
 <script type="text/javascript" src="hmms.js"></script>
 <script type="text/javascript" src="japanese.holiday.js"></script>

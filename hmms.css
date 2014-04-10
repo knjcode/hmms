@@ -11,7 +11,7 @@ div {
 
 div p {
   font-weight: bold;
-  margin: 0.5em 0;
+  margin: -0.2em 0;
 }
 
 .main {
@@ -28,6 +28,14 @@ div p {
   font-size: large;
 }
 
+.medium {
+  font-size: medium;
+}
+
+.small {
+  font-size: small;
+}
+
 .smaller {
   font-size: smaller;
 }
@@ -36,9 +44,13 @@ div p {
   font-size: x-small;
 }
 
+.xx-small {
+  font-size: xx-small;
+}
+
 #box1 {
   position: absolute;
-  top: 1%;
+  top: 9%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -46,7 +58,7 @@ div p {
 
 #box2 {
   position: absolute;
-  top: 1%;
+  top: 9%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -54,7 +66,7 @@ div p {
 
 #box3 {
   position: absolute;
-  top: 31%;
+  top: 37%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -62,7 +74,7 @@ div p {
 
 #box4 {
   position: absolute;
-  top: 31%;
+  top: 37%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -70,7 +82,7 @@ div p {
 
 #box5 {
   position: absolute;
-  top: 61%;
+  top: 63%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -78,7 +90,7 @@ div p {
 
 #box6 {
   position: absolute;
-  top: 61%;
+  top: 63%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -86,20 +98,25 @@ div p {
 
 #now {
   position: absolute;
-  top:96%;
+  top:1%;
 }
 
 #sli {
   position: absolute;
-  top:90%;
+  top: 4%;
 }
 
 #slider {
   position: absolute;
   margin-left: -100px;
   width: 200px;
-  top:92%;
+  top: 90%;
 }
+
+input[type=range]::-webkit-slider-thumb {
+  border: 15px solid;
+}
+
 /*
 #boxContainer {
   border: 1px solid #000000;

@@ -40,11 +40,13 @@ function timetest(){
     var i = 0;
     var nt = "", duration = "";
     var now = new Date();
-    now.setHours(now.getHours() + (rangevalue / 60));
-    now.setMinutes(now.getMinutes() + (rangevalue % 60));
+    offset = rangevalue - 60;
+    now.setHours(now.getHours() + (offset / 60));
+    now.setMinutes(now.getMinutes() + (offset % 60));
     //時刻調整用
     //now.setTime(now.getTime() + 2*24*60*60*1000 + 8*60*60*1000 + 17*60*1000);
 
+    document.getElementById("sli").innerHTML = "オフセット:"+offset+"分";
     document.getElementById("now").innerHTML = "出発時刻："+now.toLocaleString();
     for (i = 0; i < tables; i++){
         nt = nexttime(now,tt[i],true);
@@ -59,8 +61,6 @@ function timetest(){
             document.getElementById("dur"+String(i+1)).innerHTML = "あと"+computeDuration(duration);
         }
     }
-
-    document.getElementById("sli").innerHTML = "オフセット："+rangevalue+"分";
 
     window.setTimeout("timetest()", 1000);
 }
