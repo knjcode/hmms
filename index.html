@@ -2,25 +2,26 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <title>hmms</title>
-<link rel="stylesheet" href="hmms.css" />
+<link rel="stylesheet" href="css/hmms.css" />
 <script>
-var rangevalue = 60;
-function showvalue(val) {
-  rangevalue = val;
-  offset = val - 60;
-  document.getElementById("sli").innerHTML = "オフセット："+offset+"分";
+var offset = 0;
+function changeval(value) {
+  offset = value;
 }
 </script>
 </head>
-<body onload="init();">
+<body>
 <div class="main">
     <div id="now" class="smaller"></div>
-    <div id="sli" class="smaller"></div>
+    <form onsubmit="return false" oninput="offset.value=slider.value">
+    <div id="offset" class="smaller">offset:<output name="offset" for="slider">0</output>min</div>
     <div id="box1">
       <div id="route1" class="x-small"></div>
-      <div id="station1" class="medium"></div>
+      <div id="station1" class="large"></div>
       <div id="desc1" class="small"></div>
       <div id="next1" class="smaller"></div>
       <div id="dir1" class="x-small"></div>
@@ -29,16 +30,16 @@ function showvalue(val) {
     </div>
     <div id="box2">
       <div id="route2" class="x-small"></div>
-      <div id="station2" class="medium"></div>
+      <div id="station2" class="large"></div>
       <div id="desc2" class="small"></div>
       <div id="next2" class="smaller"></div>
       <div id="dir2" class="x-small"></div>
       <div id="type2" class="xx-small"></div>
       <p id="dur2" class="large"></p>
     </div>
-   <div id="box3">
+    <div id="box3">
       <div id="route3" class="x-small"></div>
-      <div id="station3" class="medium"></div>
+      <div id="station3" class="large"></div>
       <div id="desc3" class="small"></div>
       <div id="next3" class="smaller"></div>
       <div id="dir3" class="x-small"></div>
@@ -47,7 +48,7 @@ function showvalue(val) {
     </div>
     <div id="box4">
       <div id="route4" class="x-small"></div>
-      <div id="station4" class="medium"></div>
+      <div id="station4" class="large"></div>
       <div id="desc4" class="small"></div>
       <div id="next4" class="smaller"></div>
       <div id="dir4" class="x-small"></div>
@@ -56,7 +57,7 @@ function showvalue(val) {
     </div>
     <div id="box5">
       <div id="route5" class="x-small"></div>
-      <div id="station5" class="medium"></div>
+      <div id="station5" class="large"></div>
       <div id="desc5" class="small"></div>
       <div id="next5" class="smaller"></div>
       <div id="dir5" class="x-small"></div>
@@ -65,16 +66,16 @@ function showvalue(val) {
     </div>
     <div id="box6">
       <div id="route6" class="x-small"></div>
-      <div id="station6" class="medium"></div>
+      <div id="station6" class="large"></div>
       <div id="desc6" class="small"></div>
       <div id="next6" class="smaller"></div>
       <div id="dir6" class="x-small"></div>
       <div id="type6" class="xx-small"></div>
       <p id="dur6" class="large"></p>
     </div>
-    <input id="slider" type="range" min="0" max="120" value="60" step="1" onchange="showvalue(value)" />
+    <input type="range" id="slider" name="slider" min="-30" max="30" value="0" step="1" onchange="changeval(value)" />
 </div>
-<script type="text/javascript" src="hmms.js"></script>
-<script type="text/javascript" src="japanese.holiday.js"></script>
+<script type="text/javascript" src="js/japanese.holiday.js"></script>
+<script type="text/javascript" src="js/hmms.js"></script>
 </body>
 </html>

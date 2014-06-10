@@ -11,12 +11,11 @@ div {
 
 div p {
   font-weight: bold;
-  margin: -0.2em 0;
+  margin: 0em 0;
 }
 
 .main {
   width: 100%;
-  text-align: center; /* for IE5.5 IE5 */
 }
 
 .main div {
@@ -50,7 +49,7 @@ div p {
 
 #box1 {
   position: absolute;
-  top: 9%;
+  top: 12%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -58,7 +57,7 @@ div p {
 
 #box2 {
   position: absolute;
-  top: 9%;
+  top: 12%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -66,7 +65,7 @@ div p {
 
 #box3 {
   position: absolute;
-  top: 37%;
+  top: 39%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -74,7 +73,7 @@ div p {
 
 #box4 {
   position: absolute;
-  top: 37%;
+  top: 39%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -82,7 +81,7 @@ div p {
 
 #box5 {
   position: absolute;
-  top: 63%;
+  top: 66%;
   left: 50%;
   width: 160px;
   margin-left: -160px;
@@ -90,7 +89,7 @@ div p {
 
 #box6 {
   position: absolute;
-  top: 63%;
+  top: 66%;
   left: 50%;
   width: 160px;
   margin-left: 0px;
@@ -98,12 +97,12 @@ div p {
 
 #now {
   position: absolute;
-  top:1%;
+  top: 4%;
 }
 
-#sli {
+#offset {
   position: absolute;
-  top: 4%;
+  top: 8%;
 }
 
 #slider {
@@ -116,9 +115,3 @@ div p {
 input[type=range]::-webkit-slider-thumb {
   border: 15px solid;
 }
-
-/*
-#boxContainer {
-  border: 1px solid #000000;
-}
-*/
