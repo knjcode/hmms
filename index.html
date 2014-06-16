@@ -10,7 +10,15 @@
 <script>
 var offset = 0;
 function changeval(value) {
-  offset = value;
+  offset = parseInt(value);
+  document.getElementById("slider").value = offset;
+  document.getElementById("offset").innerHTML = "offset:" + offset + "min";
+}
+function minusval() {
+  changeval(parseInt(offset) - 5);
+}
+function plusval() {
+  changeval(parseInt(offset) + 5);
 }
 </script>
 </head>
@@ -18,7 +26,7 @@ function changeval(value) {
 <div class="main">
     <div id="now" class="smaller"></div>
     <form onsubmit="return false" oninput="offset.value=slider.value">
-    <div id="offset" class="smaller">offset:<output name="offset" for="slider">0</output>min</div>
+    <div id="offset" class="smaller">offset:0min</div>
     <div id="box1">
       <div id="route1" class="x-small"></div>
       <div id="station1" class="large"></div>
@@ -73,7 +81,9 @@ function changeval(value) {
       <div id="type6" class="xx-small"></div>
       <p id="dur6" class="large"></p>
     </div>
-    <input type="range" id="slider" name="slider" min="-30" max="30" value="0" step="1" onchange="changeval(value)" />
+    <button type="button" id="minus-button" onclick="minusval()">-</button>
+    <input type="range" id="slider" min="-30" max="30" value="0" step="1" onchange="changeval(value)" />
+    <button type="button" id="plus-button" onclick="plusval()">+</button>
 </div>
 <script type="text/javascript" src="js/japanese.holiday.js"></script>
 <script type="text/javascript" src="js/hmms.js"></script>
