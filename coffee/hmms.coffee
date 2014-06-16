@@ -1,4 +1,4 @@
-class TimeTable
+class @TimeTable
 
   constructor: (@src) ->
     @tt = []
@@ -97,7 +97,7 @@ computeDuration = (ms) ->
   s = String(Math.round((ms - h * 3600000 - m * 60000) / 1000) + 100).substring(1)
   h + ":" + m + ":" + s
 
-timetest = ->
+@timetest = ->
   now = new Date()
   if(offset < -60 || 60 < offset)
     alert("offset range error")
@@ -120,20 +120,3 @@ timetest = ->
       document.getElementById("dur"+String(i+1)).innerHTML = "あと"+computeDuration(duration)
 
   setTimeout (-> timetest()), 1000
-
-window.onload = ->
-  @tables = 6
-  @table = []
-  @table[0] = new TimeTable '3ban.csv'
-  @table[1] = new TimeTable '4ban.csv'
-  @table[2] = new TimeTable '5ban.csv'
-  @table[3] = new TimeTable '6ban.csv'
-  @table[4] = new TimeTable '1ban.csv'
-  @table[5] = new TimeTable '2ban.csv'
-
-  for i in [0...tables]
-    document.getElementById("route"+String(i+1)).innerHTML = @table[i].getRoute()
-    document.getElementById("station"+String(i+1)).innerHTML = @table[i].getStation()
-    document.getElementById("desc"+String(i+1)).innerHTML = @table[i].getDesc()
-
-  timetest()

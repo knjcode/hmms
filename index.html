@@ -7,20 +7,6 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <title>hmms</title>
 <link rel="stylesheet" href="css/hmms.css" />
-<script>
-var offset = 0;
-function changeval(value) {
-  offset = parseInt(value);
-  document.getElementById("slider").value = offset;
-  document.getElementById("offset").innerHTML = "offset:" + offset + "min";
-}
-function minusval() {
-  changeval(parseInt(offset) - 5);
-}
-function plusval() {
-  changeval(parseInt(offset) + 5);
-}
-</script>
 </head>
 <body>
 <div class="main">
@@ -87,5 +73,40 @@ function plusval() {
 </div>
 <script type="text/javascript" src="js/japanese.holiday.js"></script>
 <script type="text/javascript" src="js/hmms.js"></script>
+<script type="text/javascript">
+  var offset = 0;
+
+  function changeval(value) {
+    offset = parseInt(value);
+    document.getElementById("slider").value = offset;
+    document.getElementById("offset").innerHTML = "offset:" + offset + "min";
+  }
+
+  function minusval() {
+    changeval(parseInt(offset) - 5);
+  }
+
+  function plusval() {
+    changeval(parseInt(offset) + 5);
+  }
+
+  window.onload = function() {
+    tables = 6;
+    table = [];
+    table[0] = new TimeTable("3ban.csv");
+    table[1] = new TimeTable("4ban.csv");
+    table[2] = new TimeTable("5ban.csv");
+    table[3] = new TimeTable("6ban.csv");
+    table[4] = new TimeTable("1ban.csv");
+    table[5] = new TimeTable("2ban.csv");
+
+    for (i = 0; i < tables; i++) {
+      document.getElementById("route" + String(i + 1)).innerHTML = table[i].getRoute();
+      document.getElementById("station" + String(i + 1)).innerHTML = table[i].getStation();
+      document.getElementById("desc" + String(i + 1)).innerHTML = table[i].getDesc();
+    }
+    timetest();
+  };
+</script>
 </body>
 </html>
