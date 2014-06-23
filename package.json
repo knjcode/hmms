@@ -1,0 +1,19 @@
+{
+  "name": "hmms",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:knjcode/hmms.git"
+  },
+  "author": "knjcode",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "~3.8.1",
+    "gulp-clean": "~0.3.0",
+    "gulp-coffee": "~2.0.1",
+    "gulp-uglify": "~0.3.1",
+    "gulp-util": "~2.2.17"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.7.1"
+  }
+}
