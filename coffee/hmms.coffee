@@ -60,7 +60,7 @@ class @TimeTable
     if ( 0 < day and day < 6 )
       i = @weekday
     if ( day is 6 )
-      i = @saturyday
+      i = @saturday
     if ( day is 0 )
       i = @sunday_holiday
 
