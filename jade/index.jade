@@ -1,0 +1,101 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+    title hmms
+    link(rel="stylesheet", href="css/hmms.css")
+  body
+    div.main
+      div#now.smaller
+      div#offset.smaller offset:0min
+      div#box1
+        div#route1.x-small
+        div#station1.large
+        div#desc1.small
+        div#next1.smaller
+        div#dir1.x-small
+        div#type1.xx-small
+        p#dur1.large
+      div#box2
+        div#route2.x-small
+        div#station2.large
+        div#desc2.small
+        div#next2.smaller
+        div#dir2.x-small
+        div#type2.xx-small
+        p#dur2.large
+      div#box3
+        div#route3.x-small
+        div#station3.large
+        div#desc3.small
+        div#next3.smaller
+        div#dir3.x-small
+        div#type3.xx-small
+        p#dur3.large
+      div#box4
+        div#route4.x-small
+        div#station4.large
+        div#desc4.small
+        div#next4.smaller
+        div#dir4.x-small
+        div#type4.xx-small
+        p#dur4.large
+      div#box5
+        div#route5.x-small
+        div#station5.large
+        div#desc5.small
+        div#next5.smaller
+        div#dir5.x-small
+        div#type5.xx-small
+        p#dur5.large
+      div#box6
+        div#route6.x-small
+        div#station6.large
+        div#desc6.small
+        div#next6.smaller
+        div#dir6.x-small
+        div#type6.xx-small
+        p#dur6.large
+      button#minus-button(type="button", onclick="minusval()") -
+      input(type="range", id="slider", min="-30", max="30", value="0", step="1", onchange="changeval(value)")
+      button(type="button", id="plus-button", onclick="plusval()") +
+      script(type="text/javascript", src="js/japanese.holiday.js")
+      script(type="text/javascript", src="js/hmms.js")
+      script(type="text/javascript")
+        |  var offset = 0;
+        |  
+        |  function changeval(value) {
+        |    offset = parseInt(value);
+        |    document.getElementById("slider").value = offset;
+        |    document.getElementById("offset").innerHTML = "offset:" + offset + "min";
+        |  }
+        |  
+        |  function minusval() {
+        |    changeval(parseInt(offset) - 5);
+        |  }
+        |  
+        |  function plusval() {
+        |    changeval(parseInt(offset) + 5);
+        |  }
+        |  
+        |  window.onload = function() {
+        |    tables = 6;
+        |    table = [];
+        |    table[0] = new TimeTable("3ban.csv");
+        |    table[1] = new TimeTable("4ban.csv");
+        |    table[2] = new TimeTable("5ban.csv");
+        |    table[3] = new TimeTable("6ban.csv");
+        |    table[4] = new TimeTable("1ban.csv");
+        |    table[5] = new TimeTable("2ban.csv");
+        |    
+        |    for (i = 0; i < tables; i++) {
+        |      document.getElementById("route" + String(i + 1)).innerHTML = table[i].getRoute();
+        |      document.getElementById("station" + String(i + 1)).innerHTML = table[i].getStation();
+        |      document.getElementById("desc" + String(i + 1)).innerHTML = table[i].getDesc();
+        |    }
+        |    timetest();
+        |  };
+
