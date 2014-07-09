@@ -18,7 +18,7 @@ gulp.task 'script', ->
 
 gulp.task 'html', ->
   gulp.src './jade/*.jade'
-    .pipe jade()
+    .pipe jade(pretty: true)
     .pipe gulp.dest './'
 
 gulp.task 'watch', ->
