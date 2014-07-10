@@ -13,6 +13,7 @@
     "gulp-uglify": "~0.3.1",
     "gulp-util": "~2.2.17",
     "gulp-jade": "~0.6.0",
+    "gulp-ruby-sass": "~0.6.0",
     "coffee-script": "~1.7.1"
   }
 }

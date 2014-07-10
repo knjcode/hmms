@@ -8,15 +8,21 @@ clean = require 'gulp-clean'
 uglify = require 'gulp-uglify'
 coffee = require 'gulp-coffee'
 jade   = require 'gulp-jade'
+sass   = require 'gulp-ruby-sass'
 
 
-gulp.task 'script', ->
+gulp.task 'coffee', ->
   gulp.src './coffee/*.coffee'
     .pipe coffee()
     .pipe uglify()
     .pipe gulp.dest './js/'
 
-gulp.task 'html', ->
+gulp.task 'sass', ->
+  gulp.src './sass/*.scss'
+    .pipe sass()
+    .pipe gulp.dest './css/'
+
+gulp.task 'jade', ->
   gulp.src './jade/*.jade'
     .pipe jade(pretty: true)
     .pipe gulp.dest './'
@@ -30,5 +36,7 @@ gulp.task 'clean', ->
     .pipe clean()
   gulp.src './*.html', {read:false}
     .pipe clean()
+  gulp.src './css/hmms.css', {read:false}
+    .pipe clean()
 
-gulp.task 'default', ['script', 'html']
+gulp.task 'default', ['coffee', 'sass', 'jade']
