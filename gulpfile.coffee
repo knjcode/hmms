@@ -39,4 +39,4 @@ gulp.task 'clean', ->
   gulp.src './css/hmms.css', {read:false}
     .pipe clean()
 
-gulp.task 'default', ['coffee', 'sass', 'jade']
+gulp.task 'default', ['clean', 'coffee', 'sass', 'jade']
