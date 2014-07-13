@@ -38,53 +38,53 @@ div p {
 
 #box1 {
   position: absolute;
-  top: 12%;
+  top: 8%;
   left: 50%;
   width: 160px;
   margin-left: -160px; }
 
 #box2 {
   position: absolute;
-  top: 12%;
+  top: 8%;
   left: 50%;
   width: 160px;
   margin-left: 0px; }
 
 #box3 {
   position: absolute;
-  top: 39%;
+  top: 35%;
   left: 50%;
   width: 160px;
   margin-left: -160px; }
 
 #box4 {
   position: absolute;
-  top: 39%;
+  top: 35%;
   left: 50%;
   width: 160px;
   margin-left: 0px; }
 
 #box5 {
   position: absolute;
-  top: 66%;
+  top: 62%;
   left: 50%;
   width: 160px;
   margin-left: -160px; }
 
 #box6 {
   position: absolute;
-  top: 66%;
+  top: 62%;
   left: 50%;
   width: 160px;
   margin-left: 0px; }
 
 #now {
   position: absolute;
-  top: 4%; }
+  top: 0%; }
 
 #offset {
   position: absolute;
-  top: 8%; }
+  top: 4%; }
 
 #slider {
   position: absolute;

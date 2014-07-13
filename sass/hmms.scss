@@ -1,10 +1,16 @@
 $width: 160px;
 $slider-width: 200px;
 $button-size: 32px;
-$top: 12%;
-$center: 39%;
-$bottom: 66%;
+$top: 8%;
+$center: 35%;
+$bottom: 62%;
+$top-now: 0%;
+$top-offset: 4%;
 $top-sliderbutton: 90%;
+$slider-thumb-border: 15px;
+$button-border-radius: 5px;
+$minus-button-left: 5%;
+$plus-button-left: 86%;
 
 body {
   margin: 0;
@@ -105,12 +111,12 @@ div p {
 
 #now {
   position: absolute;
-  top: 4%;
+  top: $top-now;
 }
 
 #offset {
   position: absolute;
-  top: 8%;
+  top: $top-offset;
 }
 
 #slider {
@@ -121,7 +127,7 @@ div p {
 }
 
 input[type=range]::-webkit-slider-thumb {
-  border: 15px solid;
+  border: $slider-thumb-border solid;
 }
 
 #minus-button {
@@ -129,8 +135,8 @@ input[type=range]::-webkit-slider-thumb {
   width: $button-size;
   height: $button-size;
   top: $top-sliderbutton;
-  left: 5%;
-  border-radius: 5px;
+  left: $minus-button-left;
+  border-radius: $button-border-radius;
 }
 
 #plus-button {
@@ -138,7 +144,7 @@ input[type=range]::-webkit-slider-thumb {
   width: $button-size;
   height: $button-size;
   top: $top-sliderbutton;
-  left: 86%;
-  border-radius: 5px;
+  left: $plus-button-left;
+  border-radius: $button-border-radius;
 }
 
