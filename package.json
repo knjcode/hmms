@@ -7,12 +7,12 @@
   "author": "knjcode",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "~3.8.1",
-    "gulp-clean": "~0.3.0",
+    "gulp": "~3.8.6",
+    "gulp-clean": "~0.3.1",
     "gulp-coffee": "~2.0.1",
     "gulp-uglify": "~0.3.1",
-    "gulp-util": "~2.2.17",
-    "gulp-jade": "~0.6.0",
+    "gulp-util": "~2.2.20",
+    "gulp-jade": "~0.6.1",
     "gulp-ruby-sass": "~0.6.0",
     "coffee-script": "~1.7.1"
   }
