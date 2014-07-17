@@ -28,8 +28,9 @@ gulp.task 'jade', ->
     .pipe gulp.dest './'
 
 gulp.task 'watch', ->
-  gulp.watch './coffee/*.coffee', ['script']
-  gulp.watch './jade/*.jade', ['html']
+  gulp.watch './coffee/*.coffee', ['coffee']
+  gulp.watch './sass/*.scss', ['sass']
+  gulp.watch './jade/*.jade', ['jade']
 
 gulp.task 'clean', ->
   gulp.src './js/hmms.js', {read:false}
