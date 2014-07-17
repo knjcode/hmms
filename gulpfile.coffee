@@ -19,7 +19,7 @@ gulp.task 'coffee', ->
 
 gulp.task 'sass', ->
   gulp.src './sass/*.scss'
-    .pipe sass()
+    .pipe sass(unixNewlines: true)
     .pipe gulp.dest './css/'
 
 gulp.task 'jade', ->
