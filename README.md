@@ -73,7 +73,7 @@ gulpのオプションは以下のとおりです。
 coffee: CoffeeScriptのみコンパイル  
 sass  : scssファイルのみコンパイル  
 jade  : jadeファイルのみコンパイル  
-watch : 各種ファイルに変更監視＆コンパイル  
+serve : 各種ソースファイルの変更監視＆ブラウザシンク  
 clean : コンパイルで生成されるァイルの一括削除
 
 # TODO
