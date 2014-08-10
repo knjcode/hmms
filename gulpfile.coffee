@@ -1,5 +1,8 @@
 gulp = require 'gulp'
 gutil = require 'gulp-util'
+browserSync = require 'browser-sync'
+reload = browserSync.reload
+runSequence = require 'run-sequence'
 
 # misc
 clean = require 'gulp-clean'
@@ -27,10 +30,16 @@ gulp.task 'jade', ->
     .pipe jade(pretty: true)
     .pipe gulp.dest './'
 
-gulp.task 'watch', ->
-  gulp.watch './coffee/*.coffee', ['coffee']
-  gulp.watch './sass/*.scss', ['sass']
-  gulp.watch './jade/*.jade', ['jade']
+gulp.task 'serve', ->
+  browserSync({
+    notify: false,
+    server: {
+      baseDir: ['./']
+    }
+  })
+  gulp.watch './coffee/*.coffee', ['coffee', reload]
+  gulp.watch './sass/*.scss', ['sass', reload]
+  gulp.watch './jade/*.jade', ['jade', reload]
 
 gulp.task 'clean', ->
   gulp.src './js/hmms.js', {read:false}
@@ -40,4 +49,5 @@ gulp.task 'clean', ->
   gulp.src './css/hmms.css', {read:false}
     .pipe clean()
 
-gulp.task 'default', ['clean', 'coffee', 'sass', 'jade']
+gulp.task 'default', ->
+  runSequence 'clean', 'coffee', 'sass', 'jade'
