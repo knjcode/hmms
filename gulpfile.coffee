@@ -1,11 +1,8 @@
+del = require 'del'
 gulp = require 'gulp'
-gutil = require 'gulp-util'
 browserSync = require 'browser-sync'
 reload = browserSync.reload
 runSequence = require 'run-sequence'
-
-# misc
-clean = require 'gulp-clean'
 
 # compilers
 uglify = require 'gulp-uglify'
@@ -41,13 +38,8 @@ gulp.task 'serve', ->
   gulp.watch './sass/*.scss', ['sass', reload]
   gulp.watch './jade/*.jade', ['jade', reload]
 
-gulp.task 'clean', ->
-  gulp.src './js/hmms.js', {read:false}
-    .pipe clean()
-  gulp.src './*.html', {read:false}
-    .pipe clean()
-  gulp.src './css/hmms.css', {read:false}
-    .pipe clean()
+gulp.task 'clean', (done) ->
+  del(['./js/hmms.js', './*.html', './css/hmms.css'], done)
 
 gulp.task 'default', ->
   runSequence 'clean', 'coffee', 'sass', 'jade'
