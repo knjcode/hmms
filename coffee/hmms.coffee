@@ -117,6 +117,12 @@ computeDuration = (ms) ->
 
     duration = nt.time - now
     if duration >= 0
-      document.getElementById("dur"+String(i+1)).innerHTML = "あと"+computeDuration(duration)
+      elem = document.getElementById("dur"+String(i+1))
+      elem.innerHTML = "あと"+computeDuration(duration)
+      elem.style.color = switch
+        when duration <  60000 then 'red'
+        when duration < 180000 then 'orange'
+        else 'black'
 
   setTimeout (-> timetest()), 1000
+
