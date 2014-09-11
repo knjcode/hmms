@@ -5,7 +5,6 @@ reload = browserSync.reload
 runSequence = require 'run-sequence'
 
 # compilers
-uglify = require 'gulp-uglify'
 coffee = require 'gulp-coffee'
 jade   = require 'gulp-jade'
 sass   = require 'gulp-ruby-sass'
@@ -14,7 +13,6 @@ sass   = require 'gulp-ruby-sass'
 gulp.task 'coffee', ->
   gulp.src './coffee/*.coffee'
     .pipe coffee()
-    .pipe uglify()
     .pipe gulp.dest './js/'
 
 gulp.task 'sass', ->
