@@ -98,7 +98,7 @@
           table[4] = new TimeTable("1ban.csv");
           table[5] = new TimeTable("2ban.csv");
           
-          for (i = 0; i < tables; i++) {
+          for (var i = 0; i < tables; i++) {
             document.getElementById("route" + String(i + 1)).innerHTML = table[i].getRoute();
             document.getElementById("station" + String(i + 1)).innerHTML = table[i].getStation();
             document.getElementById("desc" + String(i + 1)).innerHTML = table[i].getDesc();
