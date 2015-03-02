@@ -2,18 +2,18 @@
   var computeDuration;
 
   this.TimeTable = (function() {
-    function TimeTable(src) {
-      var i, rowData, _i, _j, _ref, _ref1;
-      this.src = src;
+    function TimeTable(src1) {
+      var i, j, k, ref, ref1, rowData;
+      this.src = src1;
       this.tt = [];
       this.weekday = 0;
       this.saturday = 0;
       this.sunday_holiday = 0;
-      rowData = this.loadTimeTable(src).split(String.fromCharCode(10));
-      for (i = _i = 0, _ref = rowData.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+      rowData = this.loadTimeTable(this.src).split(String.fromCharCode(10));
+      for (i = j = 0, ref = rowData.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
         this.tt[i] = rowData[i].split(',');
       }
-      for (i = _j = 0, _ref1 = this.tt.length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
+      for (i = k = 0, ref1 = this.tt.length; 0 <= ref1 ? k < ref1 : k > ref1; i = 0 <= ref1 ? ++k : --k) {
         if (this.tt[i][0] === "[平日]") {
           this.weekday = i + 1;
         }
@@ -57,7 +57,7 @@
     };
 
     TimeTable.prototype.nexttime = function(now, flag) {
-      var day, hh, i, mm, next, time, yesterday, _i, _ref;
+      var day, hh, i, j, mm, next, ref, ref1, time, yesterday;
       time = this.hhmm(now, flag);
       next = new Date(now);
       if (flag) {
@@ -82,7 +82,7 @@
       if (day === 0) {
         i = this.sunday_holiday;
       }
-      for (i = _i = i, _ref = this.tt.length; i <= _ref ? _i < _ref : _i > _ref; i = i <= _ref ? ++_i : --_i) {
+      for (i = j = ref = i, ref1 = this.tt.length; ref <= ref1 ? j < ref1 : j > ref1; i = ref <= ref1 ? ++j : --j) {
         if (this.tt[i][0] > time) {
           break;
         }
@@ -125,14 +125,14 @@
   };
 
   this.timetest = function() {
-    var duration, elem, i, now, nt, _i;
+    var duration, elem, i, j, now, nt, ref;
     now = new Date();
     if (offset < -60 || 60 < offset) {
       alert("offset range error");
     }
     now.setMinutes(now.getMinutes() + (offset % 60));
     document.getElementById("now").innerHTML = "出発時刻：" + now.toLocaleString();
-    for (i = _i = 0; 0 <= tables ? _i < tables : _i > tables; i = 0 <= tables ? ++_i : --_i) {
+    for (i = j = 0, ref = tables; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
       nt = this.table[i].nexttime(now, true);
       if (!nt) {
         nt = this.table[i].nexttime(now, false);

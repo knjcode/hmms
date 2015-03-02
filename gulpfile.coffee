@@ -16,8 +16,7 @@ gulp.task 'coffee', ->
     .pipe gulp.dest './js/'
 
 gulp.task 'sass', ->
-  gulp.src './sass/*.scss'
-    .pipe sass(unixNewlines: true)
+  sass './sass/', {unixNewlines:true}
     .pipe gulp.dest './css/'
 
 gulp.task 'jade', ->
