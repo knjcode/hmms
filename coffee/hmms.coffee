@@ -7,7 +7,7 @@ class @TimeTable
     @sunday_holiday = 0
 
     # 時刻表データを読み込む
-    rowData = @loadTimeTable(src).split(String.fromCharCode(10))
+    rowData = @loadTimeTable(@src).split(String.fromCharCode(10))
     for i in [0...rowData.length]
       @tt[i] = rowData[i].split(',')
 
