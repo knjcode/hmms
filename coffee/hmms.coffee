@@ -97,6 +97,13 @@ computeDuration = (ms) ->
   s = String(Math.round((ms - h * 3600000 - m * 60000) / 1000) + 100).substring(1)
   h + ":" + m + ":" + s
 
+dayOfTheWeek = (day) ->
+  week = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
+  if isHoliday(day.getFullYear(), day.getMonth()+1, day.getDate(), true)
+    '(祝)'
+  else
+    week[day.getDay()]
+
 @timetest = ->
   now = new Date()
   if(offset < -60 || 60 < offset)
@@ -104,7 +111,7 @@ computeDuration = (ms) ->
   now.setMinutes(now.getMinutes() + (offset % 60))
   #時刻調整用
   #now.setTime(now.getTime() + 2*24*60*60*1000 + 8*60*60*1000 + 17*60*1000)
-  document.getElementById("now").innerHTML = "出発時刻：" + now.toLocaleString()
+  document.getElementById("now").innerHTML = "出発時刻：" + now.toLocaleString() + dayOfTheWeek(now)
 
   for i in [0...tables]
     nt = @table[i].nexttime(now,true)
